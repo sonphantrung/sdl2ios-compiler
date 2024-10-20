@@ -57,7 +57,7 @@ jobs:
                   OBJROOT="build/SDL_image/obj" \
                   BUILD_ROOT="build/SDL_image" \
                   TARGET_BUILD_DIR="build/SDL_image"
-      - uses: actions/upload-artifacts@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: sdl2ios
           path: |
