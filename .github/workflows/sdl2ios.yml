@@ -18,6 +18,7 @@ jobs:
           cd SDL/Xcode/SDL
           xcrun xcodebuild -configuration "Release" -project SDL.xcodeproj -target "Static Library-iOS" -sdk "iphoneos" build \
                   ONLY_ACTIVE_ARCH=NO \
+                  IPHONEOS_DEPLOYMENT_TARGET=15.0 \
                   RUN_CLANG_STATIC_ANALYZER=NO \
                   BUILD_DIR="build/SDL" \
                   SYMROOT="build/SDL" \
@@ -29,6 +30,7 @@ jobs:
           cd SDL_mixer/Xcode
           xcrun xcodebuild -configuration "Release" -project SDL_mixer.xcodeproj -target "Static Library" -sdk "iphoneos" build \
                   ONLY_ACTIVE_ARCH=NO \
+                  IPHONEOS_DEPLOYMENT_TARGET=15.0 \
                   RUN_CLANG_STATIC_ANALYZER=NO \
                   BUILD_DIR="build/SDL_mixer" \
                   SYMROOT="build/SDL_mixer" \
@@ -40,17 +42,19 @@ jobs:
           cd SDL_ttf/Xcode
           xcrun xcodebuild -configuration "Release" -project SDL_ttf.xcodeproj -target "Static Library" -sdk "iphoneos" build \
                   ONLY_ACTIVE_ARCH=NO \
+                  IPHONEOS_DEPLOYMENT_TARGET=15.0 \
                   RUN_CLANG_STATIC_ANALYZER=NO \
                   BUILD_DIR="build/SDL_ttf" \
                   SYMROOT="build/SDL_ttf" \
                   OBJROOT="build/SDL_ttf/obj" \
                   BUILD_ROOT="build/SDL_ttf" \
                   TARGET_BUILD_DIR="build/SDL_ttf"
-          cd ../../..
+          cd ../../
           git clone --branch release-2.8.2 --depth=1 --recurse-submodules https://github.com/libsdl-org/SDL_image
           cd SDL_image/Xcode
           xcrun xcodebuild -configuration "Release" -project SDL_image.xcodeproj -target "Static Library" -sdk "iphoneos" build \
                   ONLY_ACTIVE_ARCH=NO \
+                  IPHONEOS_DEPLOYMENT_TARGET=15.0 \
                   RUN_CLANG_STATIC_ANALYZER=NO \
                   BUILD_DIR="build/SDL_image" \
                   SYMROOT="build/SDL_image" \
