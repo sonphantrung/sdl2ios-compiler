@@ -25,7 +25,7 @@ jobs:
                   BUILD_ROOT="build/SDL" \
                   TARGET_BUILD_DIR="build/SDL"
           cd ../../..
-          git clone --branch release-2.8.0 --depth=1 https://github.com/libsdl-org/SDL_mixer
+          git clone --branch release-2.8.0 --depth=1 --recurse-submodules https://github.com/libsdl-org/SDL_mixer
           cd SDL_mixer/Xcode
           xcrun xcodebuild -configuration "Release" -project SDL_mixer.xcodeproj -target "Static Library" -sdk "iphoneos" build \
                   ONLY_ACTIVE_ARCH=NO \
@@ -36,7 +36,7 @@ jobs:
                   BUILD_ROOT="build/SDL_mixer" \
                   TARGET_BUILD_DIR="build/SDL_mixer"
           cd ../../
-          git clone --branch release-2.22.0 --depth=1 https://github.com/libsdl-org/SDL_ttf
+          git clone --branch release-2.22.0 --depth=1 --recurse-submodules https://github.com/libsdl-org/SDL_ttf
           cd SDL_ttf/Xcode
           xcrun xcodebuild -configuration "Release" -project SDL_ttf.xcodeproj -target "Static Library" -sdk "iphoneos" build \
                   ONLY_ACTIVE_ARCH=NO \
@@ -47,7 +47,7 @@ jobs:
                   BUILD_ROOT="build/SDL_ttf" \
                   TARGET_BUILD_DIR="build/SDL_ttf"
           cd ../../..
-          git clone --branch release-2.8.2 --depth=1 https://github.com/libsdl-org/SDL_image
+          git clone --branch release-2.8.2 --depth=1 --recurse-submodules https://github.com/libsdl-org/SDL_image
           cd SDL_image/Xcode
           xcrun xcodebuild -configuration "Release" -project SDL_image.xcodeproj -target "Static Library" -sdk "iphoneos" build \
                   ONLY_ACTIVE_ARCH=NO \
