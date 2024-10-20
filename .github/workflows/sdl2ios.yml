@@ -59,14 +59,14 @@ jobs:
                   TARGET_BUILD_DIR="build/SDL_image"
       - name: Check dir
         run: |
-          ls SDL_image/Xcode/build/SDL_image/
-          ls SDL_ttf/Xcode/build/SDL_ttf/
-          ls SDL_mixer/Xcode/build/SDL_mixer/
+          echo "IMAGE=$(find . -name libSDL2_image.a)" >> $GITHUB_ENV
+          echo "TTF=$(find . -name libSDL2_ttf.a)" >> $GITHUB_ENV
+          echo "MIXER=$(find . -name libSDL2_mixer.a)" >> $GITHUB_ENV
       - uses: actions/upload-artifact@v4
         with:
           name: sdl2ios
           path: |
-            SDL_image/Xcode/build/SDL_image/libSDL2_image.a
-            SDL_ttf/Xcode/build/SDL_ttf/libSDL2_ttf.a
-            SDL_mixer/Xcode/build/SDL_mixer/libSDL2_mixer.a
+            ${{env.IMAGE}}
+            ${{env.TTF}}
+            ${{env.MIXER}}
             SDL/Xcode/SDL/build/SDL/libSDL2.a
